@@ -1,0 +1,36 @@
+# for wine dataset
+wine <- read.csv("wine.csv", header = TRUE,sep =",")
+prev_mean <- apply(wine, 2, mean)
+cat("Mean before normalization :\n")
+print(prev_mean)
+prev_sd <- apply(wine, 2, sd)
+cat("SD before normalization :\n")
+print(prev_sd)
+wine <- scale(wine)
+after_mean <- apply(wine, 2, mean)
+cat("Mean after normalization :\n")
+print(after_mean)
+after_sd <- apply(wine, 2, sd)
+cat("SD after normalization :\n")
+print(after_sd)
+ # for iris dataset
+iris <- read.csv("dirty_iris.csv", header = TRUE,sep =",")
+for (i in 1:(ncol(iris)-1)) {
+  iris[!is.finite(iris[, i]), i] <- NA
+}
+clean_iris = na.omit(iris)
+clean_iris <- subset(clean_iris, select = -c(Species))
+prev_mean <- apply(clean_iris, 2, mean)
+cat("Mean before normalization :\n")
+print(prev_mean)
+prev_sd <- apply(clean_iris, 2, sd)
+cat("SD before normalization :\n")
+print(prev_sd)
+clean_iris <- scale(clean_iris)
+after_mean <- apply(clean_iris, 2, mean)
+cat("Mean after normalization :\n")
+print(after_mean)
+after_sd <- apply(clean_iris, 2, sd)
+cat("SD after normalization :\n")
+print(after_sd)
+
