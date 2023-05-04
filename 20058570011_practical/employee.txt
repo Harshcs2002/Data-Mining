@@ -1,0 +1,5 @@
+Name Department Price Copies Status
+Discrete-Structures Computer 500 2 Availabe
+Fuzzy-Maths Maths -20 0 Availabe
+Hypothesis-Testing Statistics 100 2 Unavailable
+Data-Mining Comp. 100000 -3 Unavailable
